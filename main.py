@@ -1,17 +1,13 @@
 # ------------------------------ #
 #       Rock Paper Scissor       #
 # ------------------------------ #
-
 # Option available are #
 # 1 : Rock
 # 2 : Paper
 # 3 : Scissor
 
-
 # ------------------------------- #
 import random
-
-
 
 
 # building the game UI
@@ -29,7 +25,7 @@ def ui_build():
 	print("---------------------------------------------")
 
 
-def ui_retart():
+def ui_restart():
 	print("--------------------------------------------")
 	print("|          RESTARTING GAME NOW             |")
 	print("--------------------------------------------")
@@ -40,29 +36,29 @@ def ui_end():
 	print("|            ENDING GAME NOW               |")
 	print("--------------------------------------------")
 
+
 def ui_play_again():
 	print("| Do you want to play again ?               |")
 	print("| [Y]es or [N]o                             |")
 	print("---------------------------------------------")
 
-
+def ui_error():
+	print("---------------------------------------------")
+	print("|                 ERROR !!!                 |")
+	print("| Input a number which is < 3 and > 1       |")
 
 
 # game logic that calculates the winning and losing points
 def start():
 	cpu = random.randint(1, 3)
 
-
 	user = input("| Choose now :")
 
 	user_num = int(user)
 	cpu_num = int(cpu)
 
-
 	while(user_num > 3):
-		print("---------------------------------------------")
-		print("|                 ERROR !!!                 |")
-		print("| Input a number which is < 3 and > 1       |")
+		ui_error()
 		break
 	else:
 		if(user_num > cpu_num or user_num == 1 and cpu_num == 3):
@@ -81,8 +77,6 @@ def start():
 			print("---------------------------------------------")
 
 
-
-
 # game restart UI and logic
 def restart():
 	ui_play_again()
@@ -90,13 +84,11 @@ def restart():
 	play_again = input()
 
 	if(str(play_again) == "y" or str(play_again) == "Y" or str(play_again) == "yes"):
-		restart_ui()
+		ui_restart()
 		start()
 	else:
 		ui_end()
 		pass
-
-
 
 
 # program lifecycle
