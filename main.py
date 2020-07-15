@@ -24,18 +24,15 @@ def ui_build():
 	print("| Kindly enter a number to play.            |")
 	print("---------------------------------------------")
 
-
 def ui_restart():
 	print("--------------------------------------------")
 	print("|          RESTARTING GAME NOW             |")
 	print("--------------------------------------------")
 
-
 def ui_end():
 	print("--------------------------------------------")
 	print("|            ENDING GAME NOW               |")
 	print("--------------------------------------------")
-
 
 def ui_play_again():
 	print("| Do you want to play again ?               |")
